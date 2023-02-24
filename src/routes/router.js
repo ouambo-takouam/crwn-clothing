@@ -9,6 +9,8 @@ import Authentication from './authentication/authentication.component';
 import Checkout from './checkout/checkout.component';
 import CategoriesPreview from './categories-preview/categories-preview.component';
 import Category from './category/category.component';
+import { Elements } from '@stripe/react-stripe-js';
+import { stripePromise } from '../utils/stripe/stripe.utils';
 
 export const router = createBrowserRouter([
 	{
@@ -16,7 +18,9 @@ export const router = createBrowserRouter([
 		element: (
 			<Provider store={store}>
 				<PersistGate loading={null} persistor={persistor}>
-					<Root />
+					<Elements stripe={stripePromise}>
+						<Root />
+					</Elements>
 				</PersistGate>
 			</Provider>
 		),
