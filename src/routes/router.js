@@ -3,14 +3,14 @@ import { createBrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from '../store/store';
+import { Elements } from '@stripe/react-stripe-js';
+import { stripePromise } from '../utils/stripe/stripe.utils';
 import Home from './home/home.component';
 import Shop from './shop/shop.component';
 import Authentication from './authentication/authentication.component';
 import Checkout from './checkout/checkout.component';
 import CategoriesPreview from './categories-preview/categories-preview.component';
 import Category from './category/category.component';
-import { Elements } from '@stripe/react-stripe-js';
-import { stripePromise } from '../utils/stripe/stripe.utils';
 
 export const router = createBrowserRouter([
 	{
